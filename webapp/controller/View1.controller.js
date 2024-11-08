@@ -33,6 +33,7 @@ function (Controller, Fragment, JSONModel, MessageToast) {
 
             var oView = this.getView(),
                 oDialogRegister = this.getView().byId("dialogRegister");
+                
             if (!oDialogRegister) {
                 Fragment.load({
                     id: oView.getId(),

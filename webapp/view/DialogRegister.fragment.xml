@@ -1,6 +1,7 @@
 <c:FragmentDefinition
 	xmlns="sap.m"
 	xmlns:c="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
 >
 
     <Dialog id="dialogRegister">
@@ -15,16 +16,19 @@
                 <DatePicker />
 
                 <Label text="{i18n>lbSex}" /> 
-                <!-- <SegmentedButton id="idSegmentedSexButton"/> -->
+                <SegmentedButton id="idSegmentedSexButton"/>
 
                 <Label text="{i18n>lbHeight}" />
                 <TextArea value="" width="100%"/>
 
             </form:content>
         </form:SimpleForm>
-        
+
+        <beginButton>
+            <Button text="{i18n>lbButtonSave}" icon="sap-icon://save" type="Success" press="onSaveRegister"/>
+        </beginButton>
+
         <endButton>
-            <Button text="{i18n>lbButtonSave}"   icon="sap-icon://save"    type="Success" press="onSaveRegister"/>
             <Button text="{i18n>lbButtonCancel}" icon="sap-icon://decline" type="Reject"  press="onClosePopup"/>
         </endButton>
     </Dialog>
