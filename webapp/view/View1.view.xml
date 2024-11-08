@@ -5,10 +5,32 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <headerContent>
+        <Toolbar >
+        <ToolbarSpacer />        
             <Button text="+ Novo" type="Success" icon="sap-icon://add-employee" press="onInsertRegister"/>
+        </Toolbar>            
         </headerContent>    
         <content>
+
+        <Panel headerText="{i18n>lbPanelRegisters}" class="sapUiResponsiveMargin" width="auto">
+            <List items="{path: 'oRegisterJson>/data'}" backgroundDesign="Solid" >
+                <!-- <StandardListItem infoState="Warning" infoStateInverted="true" info="{path: 'model3>UnitsInStock', formatter: '.formatAlertStock'}" title="{model3>ProductName}" counter="{model3>UnitsInStock}"> </StandardListItem> -->
+                <items>
+                    <ObjectListItem 
+                        title="{oRegisterJson>Nome}"                   
+                        >
+                        <attributes>
+                            <ObjectAttribute text="{i18n>lbHeight}: {oRegisterJson>Altura}"/>
+                            <ObjectAttribute text="{i18n>lbSex}: {oRegisterJson>Sexo}"/>
+                            <ObjectAttribute text="{i18n>lbDateBirth}: {oRegisterJson>DtNasc}"/>
+                        </attributes>
+                    </ObjectListItem>
+			    </items>
+            </List>
+           
+        </Panel>
         
         </content>
     </Page>
 </mvc:View>
+

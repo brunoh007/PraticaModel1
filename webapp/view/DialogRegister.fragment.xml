@@ -6,25 +6,26 @@
     <Dialog id="dialogRegister">
         <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
             <form:content>
-                <c:Title text="Cadastrar Novo" />
+                <c:Title text="{i18n>lbNewRegister}" />
                 
-                <Label text="Nome" />
-                <TextArea value="{/person/name}" width="100%" />
+                <Label text="{i18n>lbName}" />
+                <TextArea value="" width="100%" />
 
-                <Label text="Data de Nascimento" />
+                <Label text="{i18n>lbDateBirth}" />
                 <DatePicker />
 
-                <Label text="Sexo" /> 
+                <Label text="{i18n>lbSex}" /> 
+                <!-- <SegmentedButton id="idSegmentedSexButton"/> -->
 
-                <Label text="Altura" />
-                <TextArea value="{/person/height}" />
-                
+                <Label text="{i18n>lbHeight}" />
+                <TextArea value="" />
+
             </form:content>
         </form:SimpleForm>
         
         <endButton>
-            <Button text="Salvar" icon="sap-icon://save" type="Success" press="onSaveRegister"/>
-            <Button text="Fechar" icon="sap-icon://decline" type="Reject" press="onClosePopup"/>
+            <Button text="{i18n>lbButtonSave}"   icon="sap-icon://save"    type="Success" press="onSaveRegister"/>
+            <Button text="{i18n>lbButtonCancel}" icon="sap-icon://decline" type="Reject"  press="onClosePopup"/>
         </endButton>
     </Dialog>
 
