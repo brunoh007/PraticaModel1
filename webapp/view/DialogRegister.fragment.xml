@@ -18,7 +18,7 @@
                 <!-- <SegmentedButton id="idSegmentedSexButton"/> -->
 
                 <Label text="{i18n>lbHeight}" />
-                <TextArea value="" />
+                <TextArea value="" width="100%"/>
 
             </form:content>
         </form:SimpleForm>
