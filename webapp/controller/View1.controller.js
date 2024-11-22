@@ -12,14 +12,14 @@ function (Controller, Fragment, JSONModel, MessageToast) {
 
             var oRegisterJson = new JSONModel();
             oRegisterJson.loadData("/model/Registers.json");
-            this.getView().setModel(oRegisterJson, "oRegisterJson");
+            this.getView().setModel("oRegisterJson");
         },
 
         onClosePopup: function () {
             this.getView().byId("dialogRegister").close();
         },
 
-        onInsertRegister: function () {
+        onInsertRegister: function (oEvent) {
 
             var oView = this.getView(),
                 oDialogRegister = this.getView().byId("dialogRegister");
@@ -32,6 +32,8 @@ function (Controller, Fragment, JSONModel, MessageToast) {
                     controller: this
                 }).then(function (oDialog) {
                     oView.addDependent(oDialog);
+
+                    oDialog.bindElement({path: /dataForm});
                     oDialog.open();
                 })
             } else {
@@ -40,7 +42,7 @@ function (Controller, Fragment, JSONModel, MessageToast) {
 
         },
 
-        onSaveRegister: function(){
+        onSaveRegister: function(oEvent){
             let oModelForm = this.getView().getModel().getProperty("/dataForm");
 
             let oModelTable = this.getView().getModel().getProperty("/dataTable");
@@ -62,7 +64,9 @@ function (Controller, Fragment, JSONModel, MessageToast) {
             };
 
             this.getView().getModel().setProperty("/dataForm", oModelFormNew);
-            
+
+            this.byId("customerTable").getBinding("items").refresh();
+
             this.getView().byId("dialogRegister").close();
         }
 

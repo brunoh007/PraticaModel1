@@ -13,16 +13,16 @@
         <content>
 
         <Panel headerText="{i18n>lbPanelRegisters}" class="sapUiResponsiveMargin" width="auto" id="customerTable" >
-            <List items="{path: 'oRegisterJson>/dataTable'}" backgroundDesign="Solid" >
+            <List items="{path: '/dataTable'}" backgroundDesign="Solid" >
                 <!-- <StandardListItem infoState="Warning" infoStateInverted="true" info="{path: 'model3>UnitsInStock', formatter: '.formatAlertStock'}" title="{model3>ProductName}" counter="{model3>UnitsInStock}"> </StandardListItem> -->
                 <items>
                     <ObjectListItem 
-                        title="{oRegisterJson>Nome}"                   
+                        title="{nome}"                   
                         >
                         <attributes>
-                            <ObjectAttribute text="{i18n>lbHeight}: {oRegisterJson>Altura}"/>
-                            <ObjectAttribute text="{i18n>lbSex}: {oRegisterJson>Sexo}"/>
-                            <ObjectAttribute text="{i18n>lbDateBirth}: {oRegisterJson>DtNasc}"/>
+                            <ObjectAttribute text="{i18n>lbHeight}: {altura}"/>
+                            <ObjectAttribute text="{i18n>lbSex}: {sexo}"/>
+                            <ObjectAttribute text="{i18n>lbDateBirth}: {dtNasc}"/>
                         </attributes>
                     </ObjectListItem>
 			    </items>
