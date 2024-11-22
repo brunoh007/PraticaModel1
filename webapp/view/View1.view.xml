@@ -12,8 +12,8 @@
         </headerContent>    
         <content>
 
-        <Panel headerText="{i18n>lbPanelRegisters}" class="sapUiResponsiveMargin" width="auto">
-            <List items="{path: 'oRegisterJson>/data'}" backgroundDesign="Solid" >
+        <Panel headerText="{i18n>lbPanelRegisters}" class="sapUiResponsiveMargin" width="auto" id="customerTable" >
+            <List items="{path: 'oRegisterJson>/dataTable'}" backgroundDesign="Solid" >
                 <!-- <StandardListItem infoState="Warning" infoStateInverted="true" info="{path: 'model3>UnitsInStock', formatter: '.formatAlertStock'}" title="{model3>ProductName}" counter="{model3>UnitsInStock}"> </StandardListItem> -->
                 <items>
                     <ObjectListItem 

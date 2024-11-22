@@ -9,16 +9,6 @@ function (Controller, Fragment, JSONModel, MessageToast) {
 
     return Controller.extend("mentoria.fiori.ka.zpraticamodelbf.controller.View1", {
         onInit: function () {
-            // var oModelJson = new JSONModel({
-            //     dataTable: [],
-            //     dataForm: {
-            //         nome, 
-            //         dtNasc, 
-            //         sexo,
-            //         altura
-            //     }
-            // })
-            // this.getView().setModel(oModelJson, "model1");
 
             var oRegisterJson = new JSONModel();
             oRegisterJson.loadData("/model/Registers.json");
@@ -51,6 +41,28 @@ function (Controller, Fragment, JSONModel, MessageToast) {
         },
 
         onSaveRegister: function(){
+            let oModelForm = this.getView().getModel().getProperty("/dataForm");
+
+            let oModelTable = this.getView().getModel().getProperty("/dataTable");
+
+
+            let sSexo = this.getView().byId("selectedSexo").getSelectedKey(); 
+
+            oModelTable.push(oModelForm);
+
+            oEvent.getSource().getParent().destroy();
+
+            this.getView().getModel().setProperty("/dataTable", oModelTable);
+
+
+            let oModelFormNew = Object.create(oModelForm);
+
+            for (const property in oModelFormNew) {
+                oModelFormNew[property] = "";
+            };
+
+            this.getView().getModel().setProperty("/dataForm", oModelFormNew);
+            
             this.getView().byId("dialogRegister").close();
         }
 

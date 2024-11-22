@@ -1,0 +1,12 @@
+{
+    "sexo": [
+        {
+            "generoId:" 1,
+            "descricao:": "Masculino"
+        },
+        {
+            "generoId:" 2,
+            "descricao:": "Feminino"            
+        }
+    ]
+}
